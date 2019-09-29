@@ -3,3 +3,28 @@
 body	{margin: 0;
 	font-family: 'Source Sans Pro', 'メイリオ', 'Hiragino Kaku Gothic Pro', sans-serif}
 
+/* Site name */
+.site	{background-color: #444444;
+		padding: 10px;
+		text-align: center;}
+
+.site a	{color: #ffffff;
+		font-size: 20px;
+		font-family: 'Paytone One', sans-serif;
+		text-decoration: none;}
+
+/* ナビゲーションメニュー */
+.menu	{padding: 40px 0;
+		background-color: #f0f0e9;}
+
+.menu ul	{margin: 0;
+			padding: 0;
+			list-style: none;}
+
+.menu li a {display: block;
+			padding: 5px;
+			color: #000000;
+			font-size: 14px;
+			text-decoration: none}
+
+.menu li a:hover	{background-color: #eeeeee;}
