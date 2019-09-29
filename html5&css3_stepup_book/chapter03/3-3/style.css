@@ -1,0 +1,73 @@
+@charset "UTF-8";
+
+body	{margin: 0;
+	font-family: 'Source Sans Pro', 'メイリオ', 'Hiragino Kaku Gothic Pro', sans-serif}
+
+
+/* サイト名 */
+.site	{margin: 15px 0}
+
+.site a	{color: #000000;
+	font-size: small;
+	font-family: 'Paytone One', sans-serif;
+	text-decoration: none}
+
+.site img	{vertical-align: bottom}
+
+
+/* ヘッダー画像 */
+.headimg	{width: 100%;
+	height: auto;
+	margin-bottom: 20px;
+	vertical-align: bottom}
+
+/* お知らせ */
+.news	{margin-bottom: 20px;
+	padding: 20px;
+	border: solid 6px #dddddd}
+
+.news h2	{margin-top: 0;
+	margin-bottom: 5px;
+	font-size: 18px;
+	color: #666666}
+
+.news ul	{margin: 0;
+	padding: 0;
+	list-style: none}
+
+.news li a	{display: block;
+	padding: 5px;
+	border-bottom: dotted 2px #dddddd;
+	color: #000000;
+	font-size: 14px;
+	text-decoration: none}
+
+.news li a:hover	{background-color: #eeeeee}
+
+/* コピーライト */
+.copyright p	{margin: 0;
+	color: #666666;
+	font-size: 14px}
+
+
+/* グリッド */
+body	{display: grid;
+	grid-template-columns: 
+		[left] 1fr [main] 1140px [main-end] 1fr [right];
+	grid-template-rows: 
+		[head] auto [img] auto [main] auto [foot] auto [bottom]}
+
+.site	{grid-column-start: main;
+	grid-row-start: head}
+
+.headimg	{grid-column-start: main;
+	grid-row-start: img}
+
+.news	{grid-column-start: main;
+	grid-row-start: main}
+
+.copyright	{grid-column-start: main;
+	grid-row-start: foot}
+
+
+

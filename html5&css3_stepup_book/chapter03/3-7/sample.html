@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>サンプル</title>
+<meta name="viewport" content="width=device-width">
+<link href="https://fonts.googleapis.com/css?family=Paytone+One|Source+Sans+Pro:300,700" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<script>
+function myFunc() {
+	var mymenu = document.querySelector(".menu");
+
+	if (mymenu.style.maxHeight){
+
+		mymenu.style.maxHeight = null;
+
+	} else {
+
+		mymenu.style.maxHeight
+			 = mymenu.scrollHeight + "px";
+
+	}
+}
+</script>
+</head>
+<body>
+
+<div class="site">
+<a href="#"><img src="img/logo-large.png" alt="TimeSwitch" width="250" height="33"></a>
+</div>
+
+<button type="button" onclick="myFunc()">
+<i class="fa fa-bars"></i>
+<span class="sr-only">MENU</span>
+</button>
+
+<nav class="menu">
+<ul>
+<li><a href="#">トップ</a></li>
+<li><a href="#">沿革</a></li>
+<li><a href="#">事業紹介</a></li>
+<li><a href="#">採用情報</a></li>
+<li><a href="#">お問い合わせ</a></li>
+</ul>
+</nav>
+
+<img src="img/header.jpg" alt="" class="headimg">
+
+<p class="catch">
+TimeSwitchはデータの蓄積と<br>
+分析・解析のサービスを提供します。
+</p>
+
+<div class="news">
+<h2>お知らせ</h2>
+<ul>
+<li><a href="#">データセンターのメンテナンスを行います。</a></li>
+<li><a href="#">Android版アプリ バージョン1.2をリリースしました。</a></li>
+<li><a href="#">セミナー開催に伴うキャンペーンのお知らせ。</a></li>
+<li><a href="#">グラフ表示の切替方法がわかりやすくなりました。</a></li>
+</ul>
+</div>
+
+<div class="copyright">
+<p>Copyright &copy; TimeSwitch</p>
+</div>
+
+
+
+</body>
+</html>

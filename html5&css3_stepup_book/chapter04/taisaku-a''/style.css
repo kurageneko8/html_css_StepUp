@@ -1,0 +1,335 @@
+@charset "UTF-8";
+
+body	{margin: 0;
+	font-family: 'Source Sans Pro', 'メイリオ', 'Hiragino Kaku Gothic Pro', sans-serif}
+
+
+/* サイト名 */
+.site	{padding: 10px 0;
+	background-color: #eeeeee;
+	border-bottom: solid 1px #dddddd;
+	text-align: center}
+
+.site a	{color: #666666;
+	font-size: 26px;
+	font-family: 'Paytone One', sans-serif;
+	text-decoration: none}
+
+
+/* 記事 */
+.kiji h1	{margin-top: 0;
+	margin-bottom: 20px;
+	font-size: 36px}
+
+.kiji h1 span	{display: block;
+	margin-bottom: 20px;
+	color: #930000;
+	font-size: 20px;
+	font-weight: bold}
+
+.kiji p	{margin-top: 0;
+	margin-bottom: 20px;
+	line-height: 2;
+	text-align: justify}
+
+.kijiinfo	{margin-bottom: 20px;
+	color: #666666}
+
+
+/* コピーライト */
+.copyright	{padding: 18px 0;
+	background-color: #333333;
+	text-align: center}
+
+.copyright p	{margin: 0;
+	color: #ffffff;
+	font-size: 14px}
+
+
+/* 画像 */
+img	{width: 100%;
+	height: auto}
+
+figure	{margin: 0 0 30px}
+
+figcaption	{font-size: 12px}
+
+figcaption strong	{display: block}
+
+
+/* メニュー */
+.menu	{grid-column-start: 1;
+	grid-column-end: -1;
+	grid-row-start: 1;
+	grid-row-end: -1;
+	z-index: 100;
+	width: 280px;
+	margin-left: -280px;
+	background-color: rgba(0,0,0,0.8);
+	transition: margin-left 0.2s ease-out}
+
+body.open .menu	{margin-left: 0}
+
+.menu ul	{margin: 0;
+	margin-top: 60px;
+	padding: 0;
+	list-style: none;
+	height: calc(100vh - 60px);
+	overflow: auto}
+
+.menu li a	{display: block;
+	padding: 20px;
+	color: #ffffff;
+	font-size: 20px;
+	text-decoration: none}
+
+.menu li a:hover	{background-color: #222222}
+
+body.open .page-cover
+	{grid-column-start: 1;
+	grid-column-end: -1;
+	grid-row-start: 1;
+	grid-row-end: -1;
+	z-index: 50;
+	background-color: rgba(0,0,0,0.2)}
+
+body.open	{height: 100vh;
+	overflow: hidden}
+
+html	{overflow-y: scroll}
+
+
+/* メニューの開閉ボタン */
+button	{grid-column-start: 1;
+	grid-column-end: -1;
+	grid-row-start: 1;
+	justify-self: start;
+	align-self: center;
+	margin-left: 14px;
+	padding: 6px;
+	border: none;
+	background-color: transparent;
+	color: #888888;
+	font-size: 28px;
+	cursor: pointer}
+
+button:focus {outline: none}
+
+body.open button	{z-index: 200;
+	color: #ffffff}
+
+body:not(.open) .fa-close	{display: none}
+
+body.open .fa-bars	{display: none}
+
+
+/* 赤色のバー */
+.redbar	{grid-column-start: 1;
+	grid-row-start: 2;
+	grid-row-end: -2;
+	width: 25px;
+	background-color: #930000}
+
+
+/* グリッド */
+body	{display: grid;
+	grid-template-columns: minmax(20px, 1fr) minmax(auto, 900px) minmax(20px, 1fr);
+	grid-template-rows: auto 40px auto 30px auto}
+
+.site	{grid-column-start: 1;
+	grid-column-end: -1;
+	grid-row-start: 1}
+
+.kiji	{grid-column-start: 2;
+	grid-row-start: 3}
+
+.copyright	{grid-column-start: 1;
+	grid-column-end: -1;
+	grid-row-start: -2}
+
+
+
+
+/* ########### 600px以上 ########### */
+@media (min-width: 600px) {
+
+/* 記事のグリッド */
+article	{display: grid;
+	grid-template-columns: auto 1fr 7fr}
+
+article > *	{grid-column-start: 3}
+
+article > h1	{grid-column-start: 1;
+	grid-column-end: span 3}
+
+article > .kijiinfo	{grid-column-start: 1;
+	grid-row-end: span 2}
+
+article > .fig1	{grid-column-start: 1;
+	grid-column-end: span 3;
+	grid-row-start: 4}
+
+article > .fig3	{grid-column-start: 2;
+	grid-column-end: span 2;
+	grid-row-start: 6}
+
+
+/* 記事の日付 */
+.kijiinfo span	{display: block;
+	margin-bottom: 10px;
+	font-size: 120px;
+	line-height: 1}
+
+.kijiinfo time	{display: block}
+
+
+/* 画像とキャプション */
+.fig1	{margin-bottom: -65px}
+
+.fig2	{display: flex;
+	align-items: flex-start;
+	flex-direction: row-reverse;
+	margin-bottom: -140px}
+
+.fig3	{display: flex;
+	align-items: flex-end}
+
+.fig2 img	{width: 65%;
+	margin-left: 10px}
+
+.fig3 img	{width: 75%;
+	margin-right: 10px}
+
+figcaption	{width: 14em}
+
+
+	/* ########### 767px以下 ########### */
+	@media (max-width: 767px) {
+
+		article > .fig3	{grid-column-start: 1;
+			grid-column-end: span 3}
+
+		.fig2	{margin-bottom: -70px}
+
+		.fig1 figcaption	{width: 11em}
+
+
+	}
+
+}
+
+
+/* ########### 1023px以下 ########### */
+@media (max-width: 1023px) {
+
+.redbar	{grid-column-start: 1;
+	grid-column-end: -1;
+	grid-row-start: 2;
+	grid-row-end: 3;
+	width: auto;
+	height: 10px}
+
+}
+
+
+
+
+/* ### グリッドレイアウトに未対応なブラウザ（IE11以外）用の設定 ### */
+@supports not (display: grid) {
+
+/* P.315のhtmlとbodyの設定 */
+html	{background: #dddddd}
+body	{max-width: 768px;
+	margin: 0 auto;
+	padding: 10px 20px;
+	background-color: #ffffff}
+
+/* 記事の上の余白サイズを調整 */
+.kiji	{margin-top: 20px}
+
+/* 記事に関する情報の表示を整える */
+.kijiinfo time	{display: inline}
+
+.kijiinfo span	{display: inline;
+	font-size: 16px}
+
+/* 画像とキャプションの表示を整える */
+.kiji figure	{display: block;
+	margin-bottom: 30px}
+
+.kiji img	{width: 100%;
+	margin: 0}
+
+.kiji figcaption	{width: 100%}
+
+/* メニューの表示を整える */
+.menu	{width: 100%;
+	margin-left: 0;
+	margin-bottom: 20px;}
+
+.menu ul	{height: auto}
+
+.menu li a	{padding: 10px;
+	font-size: 12px}
+
+/* メニューのリンクを段組みにする */
+.menu ul	{display: flex;
+	flex-wrap: wrap}
+.menu li	{flex: 1 0 150px}
+
+
+/* ボタンを非表示にする */
+button	{display: none}
+
+}
+
+
+
+/* ### IE11用の設定 ### */
+@media all and (-ms-high-contrast: none), not all and (-ms-high-contrast: none) {
+
+/* P.315のhtmlとbodyの設定 */
+html	{background: #dddddd}
+body	{max-width: 768px;
+	margin: 0 auto;
+	padding: 10px 20px;
+	background-color: #ffffff}
+
+/* 記事の上の余白サイズを調整 */
+.kiji	{margin-top: 20px}
+
+/* 記事に関する情報の表示を整える */
+.kijiinfo time	{display: inline}
+
+.kijiinfo span	{display: inline;
+	font-size: 16px}
+
+/* 画像とキャプションの表示を整える */
+.kiji figure	{display: block;
+	margin-bottom: 30px}
+
+.kiji img	{width: 100%;
+	margin: 0}
+
+.kiji figcaption	{width: 100%}
+
+/* メニューの表示を整える */
+.menu	{width: 100%;
+	margin-left: 0;
+	margin-bottom: 20px;}
+
+.menu ul	{height: auto}
+
+.menu li a	{padding: 10px;
+	font-size: 12px}
+
+/* メニューのリンクを段組みにする */
+.menu ul	{display: flex;
+	flex-wrap: wrap}
+.menu li	{flex: 1 0 150px}
+
+
+/* ボタンを非表示にする */
+button	{display: none}
+
+}

@@ -1,0 +1,104 @@
+@charset "UTF-8";
+
+body	{margin: 0;
+	font-family: 'Source Sans Pro', 'メイリオ', 'Hiragino Kaku Gothic Pro', sans-serif}
+
+
+/* サイト名 */
+.site	{padding: 10px 0;
+	background-color: #eeeeee;
+	border-bottom: solid 1px #dddddd;
+	text-align: center}
+
+.site a	{color: #666666;
+	font-size: 26px;
+	font-family: 'Paytone One', sans-serif;
+	text-decoration: none}
+
+
+/* 記事 */
+.kiji h1	{margin-top: 0;
+	margin-bottom: 20px;
+	font-size: 36px}
+
+.kiji h1 span	{display: block;
+	margin-bottom: 20px;
+	color: #930000;
+	font-size: 20px;
+	font-weight: bold}
+
+.kiji p	{margin-top: 0;
+	margin-bottom: 20px;
+	line-height: 2;
+	text-align: justify}
+
+.kijiinfo	{margin-bottom: 20px;
+	color: #666666}
+
+
+/* コピーライト */
+.copyright	{padding: 18px 0;
+	background-color: #333333;
+	text-align: center}
+
+.copyright p	{margin: 0;
+	color: #ffffff;
+	font-size: 14px}
+
+
+/* 画像 */
+img	{width: 100%;
+	height: auto}
+
+figure	{margin: 0 0 30px}
+
+figcaption	{font-size: 12px}
+
+figcaption strong	{display: block}
+
+
+/* グリッド */
+body	{display: grid;
+	grid-template-columns: minmax(20px, 1fr) minmax(auto, 900px) minmax(20px, 1fr);
+	grid-template-rows: auto 40px auto 30px auto}
+
+.site	{grid-column-start: 1;
+	grid-column-end: -1;
+	grid-row-start: 1}
+
+.kiji	{grid-column-start: 2;
+	grid-row-start: 3}
+
+.copyright	{grid-column-start: 1;
+	grid-column-end: -1;
+	grid-row-start: -2}
+
+
+/* ########### 600px以上 ########### */
+@media (min-width: 600px) {
+
+/* 記事のグリッド */
+article	{display: grid;
+	grid-template-columns: auto 1fr 7fr}
+
+article > *	{grid-column-start: 3}
+
+article > h1	{grid-column-start: 1;
+	grid-column-end: span 3}
+
+article > .kijiinfo	{grid-column-start: 1;
+	grid-row-end: span 2}
+
+
+/* 記事の日付 */
+.kijiinfo span	{display: block;
+	margin-bottom: 10px;
+	font-size: 120px;
+	line-height: 1}
+
+.kijiinfo time	{display: block}
+
+}
+
+
+
